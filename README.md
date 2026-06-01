@@ -1,65 +1,81 @@
-# My Portfolio Website - Overview 🚀
+# R Jeevan - Portfolio Website 🚀
 
-This repository contains the open-source version of my personal portfolio website.  
-Feel free to explore the code and use it for learning and inspiration.
+Welcome to my personal portfolio website repository.
 
----
-
-## ⚠️ Usage Notice
-
-This project is shared for learning purposes only.
-
-Please do NOT:
-- Clone or replicate the full website or design
-- Repost it with minor content changes
-- Use this project for commercial/client work
-- Create tutorials or content using this exact project
-
-If you use parts of the code, you must provide proper credit linking back to the original repository.
-
-Build your own version — don’t just copy.
-
-— Moncy Yohannan
+This project showcases my skills, projects, education, and interests in Artificial Intelligence, Machine Learning, Networking, and Software Development.
 
 ---
 
-## 🛠️ Instructions
+## 👨‍💻 About Me
 
-I have modified the GSAP Club plugins using trial versions.  
-⚠️ Note: Trial plugins cannot be used for production or hosting.
+I'm R Jeevan, a B.E. graduate in Artificial Intelligence & Machine Learning with a strong interest in:
 
-For official GSAP Club plugins, refer here:  
-https://gsap.com/docs/v3/Installation/
+- Artificial Intelligence & Machine Learning
+- Networking and Cybersecurity
+- Cloud Computing
+- Software Development
+- Emerging Technologies
 
----
-
-## ⚙️ Tech Stack
-
-React • TypeScript • GSAP • Three.js • WebGL • HTML • CSS • JavaScript
+This portfolio serves as a central place to showcase my academic projects, technical skills, certifications, and achievements.
 
 ---
 
-## 🎨 Assets Usage
+## 🛠️ Tech Stack
 
-Some 3D assets included in this repository are free to use for learning purposes.
-
-However:
-
-- The original 3D avatar used on my live portfolio is NOT included in this repository
-- That avatar is a custom asset created over ~1 month
-- It is not open source and not available for reuse
-
-Any usage, extraction, or redistribution of that avatar from my live website is strictly prohibited.
+- React
+- TypeScript
+- Vite
+- GSAP
+- Three.js
+- HTML
+- CSS
+- JavaScript
 
 ---
 
-![Protfolio-Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
+## 📂 Featured Projects
+
+Some of the projects highlighted in this portfolio include:
+
+- Skin Cancer Detection using Deep Learning
+- Smart Traffic Management System
+- Resume Screener Agent
+- Other AI/ML and Software Development Projects
+
+---
+
+## ⚙️ Running Locally
+
+Clone the repository:
+
+bash git clone https://github.com/R-Jeevan-cmd/Jeevan-Portfolio.git 
+
+Install dependencies:
+
+bash npm install 
+
+Start the development server:
+
+bash npm run dev 
+
+Build for production:
+
+bash npm run build 
+
+---
+
+## 📫 Contact
+
+- Name: R Jeevan
+- Email: rajujeevan61@gmail.com
+- GitHub: https://github.com/R-Jeevan-cmd
 
 ---
 
 ## 📄 License
 
-This project is licensed under the Personal Portfolio License (PPL) v1.0.
+This project is intended for personal portfolio and educational purposes.
 
-See the LICENSE file for full details
+Please do not copy the portfolio design, content, or branding without permission. You are welcome to use the code for learning and inspiration while giving appropriate credit.
 
+© 2026 R Jeevan. All Rights Reserv
