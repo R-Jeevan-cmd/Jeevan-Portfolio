@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
 
 const SocialIcons = () => {
+  const baseURL = import.meta.env.BASE_URL ?? "/";
+
   useEffect(() => {
     const social = document.getElementById("social") as HTMLElement;
 
@@ -65,7 +67,7 @@ const SocialIcons = () => {
           </a>
         </span>
       </div>
-      <a className="resume-button" href="/R_JEEVAN_CV.pdf" target="_blank">
+      <a className="resume-button" href={`${baseURL}R_JEEVAN_CV.pdf`} target="_blank">
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />

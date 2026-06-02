@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
+const baseURL = import.meta.env.BASE_URL ?? "/";
 
 const projects = [
   {
@@ -13,7 +14,7 @@ const projects = [
     tools: "React, Node.js, Express.js, MongoDB, JWT, stock APIs, charts",
     description:
       "Authentication, portfolio tracking, real-time stock data, and live market visualization.",
-    image: "/images/stock-trading.jpg",
+    image: `${baseURL}images/stock-trading.jpg`,
   },
   {
     title: "Healthcare Data Security",
@@ -21,7 +22,7 @@ const projects = [
     tools: "Python, federated learning, blockchain, privacy-preserving ML",
     description:
       "Secure ML system improving privacy, scalability, and trust over centralized approaches.",
-    image: "/images/healthcare-security.jpg",
+    image: `${baseURL}images/healthcare-security.jpg`,
   },
   {
     title: "Resume Screener Agent",
@@ -29,7 +30,7 @@ const projects = [
     tools: "Llama 3.1, Groq API, PDF parsing, Python",
     description:
       "Automated resume scoring, candidate ranking, and feedback generation.",
-    image: "/images/resume-screener.jpg",
+    image: `${baseURL}images/resume-screener.jpg`,
   },
   {
     title: "Smart Traffic Management",
@@ -37,7 +38,7 @@ const projects = [
     tools: "YOLOv3, OpenCV, Python",
     description:
       "Vehicle detection and signal optimization based on real-time congestion.",
-    image: "/images/smart-traffic.jpg",
+    image: `${baseURL}images/smart-traffic.jpg`,
   },
   {
     title: "Portfolio Website",
@@ -45,7 +46,7 @@ const projects = [
     tools: "React, TypeScript, GSAP, Three.js, Vite, responsive CSS",
     description:
       "A modern portfolio website built to showcase interactive 3D visuals, smooth scrolling animations, and responsive project storytelling. It highlights technical skills through custom React components, animation effects, and optimized performance across devices.",
-    image: "/images/portfolio.png",
+    image: `${baseURL}images/portfolio.png`,
   },
   {
     title: "MATRU-SNEH HEALTH APP",
@@ -53,7 +54,7 @@ const projects = [
     tools: "Android, Kotlin, Room DB, WorkManager, local Kannada UI, GenAI planning",
     description:
       "A rural maternal health app for nutrition checklists, kick counters, vaccination reminders, and danger-sign alerts. It digitizes mother-child health records, supports offline use, and delivers weekly baby growth updates in Kannada.",
-    image: "/images/MATRU-SNEH.png",
+    image: `${baseURL}images/MATRU-SNEH.png`,
   },
 ];
 
@@ -150,7 +151,7 @@ const Work = () => {
                 <p>{project.description}</p>
               </div>
               <WorkImage
-                image={project.image ?? "/images/placeholder.webp"}
+                image={project.image ?? `${baseURL}images/placeholder.webp`}
                 alt={project.title}
               />
             </div>
