@@ -9,15 +9,25 @@ const baseURL = import.meta.env.BASE_URL ?? "/";
 
 const projects = [
   {
-    title: "Stock Trading Platform",
-    category: "Full-stack Zerodha Clone",
-    tools: "React, Node.js, Express.js, MongoDB, JWT, stock APIs, charts",
+    title: "AI Candidate Ranking System",
+    category: "LLM-powered Resume Ranking",
+    tools:
+      "Python, Llama 3.1, Groq API, PDF Parsing, JSONL, Streamlit, GitHub",
     description:
-      "Authentication, portfolio tracking, real-time stock data, and live market visualization.",
-    image: `${baseURL}images/stock-trading.jpg`,
+      "An AI-powered candidate ranking system that analyzes resumes against job descriptions, extracts skills and experience, and ranks candidates using semantic matching and rule-based scoring.",
+    image: `${baseURL}images/ai-candidate-ranking.png`,
   },
   {
-    title: "Healthcare Data Security",
+    title: "Sales Forecasting Dashboard",
+    category: "Time Series Forecasting",
+    tools:
+      "Python, Streamlit, Prophet, SARIMA, XGBoost, Pandas, Plotly",
+    description:
+      "An interactive dashboard for forecasting future sales using multiple time-series models with model comparison, performance metrics, and business insights.",
+    image: `${baseURL}images/sales-forecasting.png`,
+  },
+  {
+    title: "Skin Cancer Detection using Federated Learning & Blockchain ",
     category: "Federated Learning & Blockchain",
     tools: "Python, federated learning, blockchain, privacy-preserving ML",
     description:
@@ -25,28 +35,12 @@ const projects = [
     image: `${baseURL}images/healthcare-security.jpg`,
   },
   {
-    title: "Resume Screener Agent",
-    category: "AI Resume Analyzer",
-    tools: "Llama 3.1, Groq API, PDF parsing, Python",
+    title: "Stock Trading Platform (Zerodha Clone)",
+    category: "Full-stack Zerodha Clone",
+    tools: "React, Node.js, Express.js, MongoDB, JWT, stock APIs, charts",
     description:
-      "Automated resume scoring, candidate ranking, and feedback generation.",
-    image: `${baseURL}images/resume-screener.jpg`,
-  },
-  {
-    title: "Smart Traffic Management",
-    category: "Computer Vision",
-    tools: "YOLOv3, OpenCV, Python",
-    description:
-      "Vehicle detection and signal optimization based on real-time congestion.",
-    image: `${baseURL}images/smart-traffic.jpg`,
-  },
-  {
-    title: "Portfolio Website",
-    category: "Personal Portfolio Showcase",
-    tools: "React, TypeScript, GSAP, Three.js, Vite, responsive CSS",
-    description:
-      "A modern portfolio website built to showcase interactive 3D visuals, smooth scrolling animations, and responsive project storytelling. It highlights technical skills through custom React components, animation effects, and optimized performance across devices.",
-    image: `${baseURL}images/portfolio.png`,
+      "Authentication, portfolio tracking, real-time stock data, and live market visualization.",
+    image: `${baseURL}images/stock-trading.jpg`,
   },
   {
     title: "MATRU-SNEH HEALTH APP",
@@ -55,6 +49,30 @@ const projects = [
     description:
       "A rural maternal health app for nutrition checklists, kick counters, vaccination reminders, and danger-sign alerts. It digitizes mother-child health records, supports offline use, and delivers weekly baby growth updates in Kannada.",
     image: `${baseURL}images/MATRU-SNEH.png`,
+  },
+  {
+    title: "AI Resume Screening Agent",
+    category: "AI Resume Analyzer",
+    tools: "Llama 3.1, Groq API, PDF parsing, Python",
+    description:
+      "Automated resume scoring, candidate ranking, and feedback generation.",
+    image: `${baseURL}images/resume-screener.jpg`,
+  },
+  {
+    title: "Interactive 3D Portfolio Website",
+    category: "Personal Portfolio Showcase",
+    tools: "React, TypeScript, GSAP, Three.js, Vite, responsive CSS",
+    description:
+      "A modern portfolio website built to showcase interactive 3D visuals, smooth scrolling animations, and responsive project storytelling. It highlights technical skills through custom React components, animation effects, and optimized performance across devices.",
+    image: `${baseURL}images/portfolio.png`,
+  },
+  {
+    title: "Smart Traffic Management using Computer Vision",
+    category: "Computer Vision",
+    tools: "YOLOv3, OpenCV, Python",
+    description:
+      "Vehicle detection and signal optimization based on real-time congestion.",
+    image: `${baseURL}images/smart-traffic.jpg`,
   },
 ];
 
@@ -75,14 +93,14 @@ const Work = () => {
         const sectionWidth = section.clientWidth;
         const lastBox = flex.lastElementChild as HTMLElement | null;
         const fullScroll = Math.max(0, flex.scrollWidth - sectionWidth);
-        if (!lastBox) return fullScroll;
+        if (!lastBox) return Math.max(0, Math.min(fullScroll, 0) + 300);
 
         const lastEdge = lastBox.offsetLeft + lastBox.offsetWidth;
         const desired = Math.max(0, lastEdge - sectionWidth);
 
         // Prefer the last-box-based value (it bounds the meaningful content),
         // but never exceed the full scrollable width.
-        return Math.max(0, Math.min(fullScroll, desired) + 300);
+        return Math.max(0, Math.min(fullScroll, desired) + 350);
       } catch (e) {
         return 0;
       }
@@ -103,10 +121,11 @@ const Work = () => {
         scrollTrigger: {
           trigger: section,
           start: "top top",
-          end: `+=${scrollDistance}`,
+          end: () => `+=${getScrollDistance()}`,
           scrub: true,
           pin: true,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
         },
       });
 
